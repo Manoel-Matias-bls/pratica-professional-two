@@ -15,6 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['middleware' => 'web'], function(){
+
+
+});
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index']);
+
+Route::get('/listagem', ['as' => 'read', 'uses' => 'HomeController@show']);
+
+Route::post('entrada/store', ['as' => 'store', 'uses' => 'HomeController@store']);
