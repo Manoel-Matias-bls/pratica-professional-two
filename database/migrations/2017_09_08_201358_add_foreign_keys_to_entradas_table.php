@@ -14,7 +14,7 @@ class AddForeignKeysToEntradasTable extends Migration {
 	{
 		Schema::table('entradas', function(Blueprint $table)
 		{
-			$table->foreign('veiculos_id', 'fk_entradas_veiculos')->references('id')->on('veiculos')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+			$table->foreign('veiculos_id', 'fk_entradas_veiculos')->references('id')->on('veiculos')->onUpdate('CASCADE')->onDelete('CASCADE');
 		});
 	}
 

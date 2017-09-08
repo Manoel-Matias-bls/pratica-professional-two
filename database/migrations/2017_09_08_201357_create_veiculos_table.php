@@ -17,7 +17,7 @@ class CreateVeiculosTable extends Migration {
 			$table->integer('id', true);
 			$table->string('condutor', 45)->nullable();
 			$table->string('placa', 7)->nullable();
-			$table->integer('valores_id')->index('fk_veiculos_valores_idx');
+			$table->integer('categorias_id')->index('fk_veiculos_categorias1_idx');
 		});
 	}
 

@@ -36,6 +36,8 @@
                     <tr>
                         <th>Código</th>
                         <th>ENTRADA</th>
+                        <th>CONDUTOR</th>
+                        <th>PLACA</th>
                         <th>CATEGORIA</th>
                         <th class="actions">AÇÕES</th>
                     </tr>
@@ -46,28 +48,18 @@
                         <tr>
                             <td>{{ $entrada->id }}</td>
                             <td>{{ $entrada->entrada }}</td>
+                            <td>{{ $entrada->veiculo->condutor }}</td>
+                            <td>{{ $entrada->veiculo->placa }}</td>
+                            <td>{{ $entrada->veiculo->categoria->nome}}</td>
 
-                            @php
-                                switch ($entrada->veiculos_id) {
-                                case 1:
-                                    echo "<td>Motocicleta</td>";
-                                    break;
-                                case 2:
-                                    echo "<td>Carros de Passeio</td>";
-                                    break;
-                                case 3:
-                                    echo "<td>SUV's</td>";
-                                }
-                            @endphp
-
-                            {{--<td class="actions">--}}
+                            <td class="actions">
                                 {{--<a class="btn btn-success btn-xs" href="{{ route('saida',$entrada->id) }}">Saída</a>--}}
-                                {{--<a class="btn btn-warning btn-xs" href="{{ route('editar',$entrada->id) }}">Editar</a>--}}
+                                <a class="btn btn-warning btn-xs" href="{{ route('editar',$entrada->id) }}">Editar</a>
 
                                 {{--{{ Form::open(['method'=> 'DELETE','url'=>  route('delete',$entrada->id), 'style' => 'display: inline']) }}--}}
                                 {{--<button type="submit" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-modal">Excluir</button>--}}
                                 {{--{{ Form::close() }}--}}
-                            {{--</td>--}}
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
