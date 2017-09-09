@@ -53,12 +53,13 @@
                             <td>{{ $entrada->veiculo->categoria->nome}}</td>
 
                             <td class="actions">
-                                {{--<a class="btn btn-success btn-xs" href="{{ route('saida',$entrada->id) }}">Saída</a>--}}
+
+                                <a class="btn btn-success btn-xs" href="{{ route('saida',$entrada->id) }}">Saída</a>
                                 <a class="btn btn-warning btn-xs" href="{{ route('editar',$entrada->id) }}">Editar</a>
 
-                                {{--{{ Form::open(['method'=> 'DELETE','url'=>  route('delete',$entrada->id), 'style' => 'display: inline']) }}--}}
-                                {{--<button type="submit" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-modal">Excluir</button>--}}
-                                {{--{{ Form::close() }}--}}
+                                {{ Form::open(['method'=> 'DELETE','url'=>  route('delete',$entrada->id), 'style' => 'display: inline']) }}
+                                <button type="submit" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-modal">Excluir</button>
+                                {{ Form::close() }}
                             </td>
                         </tr>
                     @endforeach

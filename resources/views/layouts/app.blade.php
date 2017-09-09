@@ -34,7 +34,7 @@
                             <a class="navbar-brand" href="/">Controle de Estacionamento</a>
                         </div>
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="/">Home</a></li>
+                            <li class="active"><a href="{{route('home')}}">Home</a></li>
                             <li><a href="{{route('home')}}">Entradas</a></li>
                             <li><a href="{{route('read')}}">Status Estacionamento</a></li>
                         </ul>

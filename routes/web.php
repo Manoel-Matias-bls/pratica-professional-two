@@ -31,3 +31,10 @@ Route::post('entrada/store', ['as' => 'store', 'uses' => 'HomeController@store']
 Route::get('entrada/{entrada}/editar', ['as' => 'editar', 'uses' => 'HomeController@edit']);
 
 Route::patch('entrada/{ent}', ['as' => 'atualizar', 'uses' =>'HomeController@update']);
+
+Route::get('saida/{entrada}/fechamento', ['as' => 'saida', 'uses' => 'HomeController@saida']);
+
+Route::patch('saida/{ent}', ['as' => 'fechamento', 'uses' => 'HomeController@fechamento']);
+
+Route::delete('entrada/{entrada}', ['as' => 'delete', 'uses' => 'HomeController@delete']);
+

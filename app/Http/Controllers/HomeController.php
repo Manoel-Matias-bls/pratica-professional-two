@@ -88,4 +88,51 @@
             return view('listagem', ['entradas' => $ent]);
 
         }
+
+        public function saida($id)
+        {
+            $ent = Entrada::findOrFail($id);
+            $cat = Categoria::get();
+
+            return view('saida', ['entradas' => $ent, 'categoria' => $cat]);
+        }
+
+
+        public function fechamento($id, Request $request)
+        {
+
+            $ent = Entrada::findOrFail($id);
+
+            $condutor = $request->input('condutor');
+            $placa = $request->input('placa');
+            $categoria = $request->input('categoria');
+            $datetimeSaida = $request->input('datetimeSaida');
+            $total = $request->input('total');
+
+            $ent->veiculo->condutor = $condutor;
+            $ent->veiculo->placa = $placa;
+            $ent->veiculo->categorias_id = $categoria;
+
+            $ent->saida = $datetimeSaida;
+            $ent->total = $total;
+
+            $ent->veiculo->save();
+
+            $ent->save();
+
+            $ent = Entrada::findOrFail($id);
+
+            return view('comprovante', ['entradas' => $ent]);
+
+        }
+
+        public function delete($id)
+        {
+            $ent = Entrada::findOrFail($id);
+            $ent->veiculo->delete();
+            $ent->delete();
+            $ent = Entrada::get();
+            return view('listagem', ['entradas' => $ent]);
+        }
+
     }
