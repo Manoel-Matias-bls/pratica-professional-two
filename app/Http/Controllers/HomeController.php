@@ -30,11 +30,9 @@
             return view('home', ['categoria' => $val]);
         }
 
-        public function show(Entrada $entrada, Veiculo $veiculo)
+        public function show(Entrada $entrada)
         {
             $ent = $entrada->get();
-            $car = $veiculo->get();
-            $cat = Categoria::get();
 
             return view('listagem', ['entradas' => $ent]);
         }
@@ -53,9 +51,7 @@
 
             $car->entrada()->updateOrCreate(['entrada' => $datetime]);
 
-            $ent = $ent->get();
-
-            return view('listagem', ['entradas' => $ent]);
+            return redirect('listagem');
 
         }
 
@@ -82,10 +78,7 @@
 
             $ent->veiculo->save();
 
-            $ent = Entrada::get();
-
-
-            return view('listagem', ['entradas' => $ent]);
+            return redirect('listagem');
 
         }
 
@@ -131,8 +124,8 @@
             $ent = Entrada::findOrFail($id);
             $ent->veiculo->delete();
             $ent->delete();
-            $ent = Entrada::get();
-            return view('listagem', ['entradas' => $ent]);
+
+            return redirect('listagem');
         }
 
     }

@@ -14,7 +14,7 @@ class AddForeignKeysToVeiculosTable extends Migration {
 	{
 		Schema::table('veiculos', function(Blueprint $table)
 		{
-			$table->foreign('categorias_id', 'fk_veiculos_categorias1')->references('id')->on('categorias')->onUpdate('CASCADE')->onDelete('CASCADE');
+			$table->foreign('categorias_id', 'fk_veiculos_categorias1')->references('id')->on('categorias')->onUpdate('CASCADE')->onDelete('NO ACTION');
 		});
 	}
 
