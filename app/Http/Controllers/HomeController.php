@@ -1,11 +1,12 @@
 <?php
 
-    namespace App\Http\Controllers;
+namespace App\Http\Controllers;
 
-    use App\Categoria;
-    use App\Entrada;
-    use App\Veiculo;
-    use Illuminate\Http\Request;
+use App\Categoria;
+use App\Entrada;
+use App\Veiculo;
+use Illuminate\Http\Request;
+
 
     class HomeController extends Controller
     {
@@ -86,6 +87,32 @@
         {
             $ent = Entrada::findOrFail($id);
             $cat = Categoria::get();
+
+//            $valHora = ($ent->veiculo->categoria->valor / 60);
+//            $valDiaria = 180;
+//
+//            $totDiaria = 0;
+//            $totHora = 0;
+//            $totMinuto = 0;
+//
+//            $dtFinal = \DateTime('2017-09-11 15:41:31');
+//            $dtInicio = \DateTime('2017-09-11 15:02:05');
+//
+//            $diff = $dtInicio->diff($dtFinal);
+//
+//            if ($diff->d != 0) {
+//                $totDiaria = $valDiaria * $diff->d;
+//            }
+//
+//            if ($diff->h != 0) {
+//                $totHora = $valHora*($diff->h*60);
+//            }
+//
+//            if ($diff->i != 0) {
+//                $totMinuto = $diff->i * $valHora;
+//            }
+//
+//            $total = $totDiaria + $totHora + $totMinuto;
 
             return view('saida', ['entradas' => $ent, 'categoria' => $cat]);
         }

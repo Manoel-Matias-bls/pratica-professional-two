@@ -46,9 +46,11 @@
                             </select>
                         </div>
 
+
                         <div class="form-group">
                             <label for="total" class="control-label">Valor Total a pagar</label>
-                            <input name="total" class="form-control" placeholder="Valor Total..." type="text" value="{{}}" required>
+                            <span class="glyphicon glyphicon-refresh"></span>
+                            <input name="total" class="form-control" placeholder="Valor Total..." type="text" required>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Salvar</button>

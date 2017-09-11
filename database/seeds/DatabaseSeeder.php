@@ -11,6 +11,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+//        $faker = \Faker\Factory::create('pt_BR');
+//        $veiculo = $this->table('veiculos');
+//        $car = [];
+//
+//        foreach(range(1, 10) as $value){
+//
+//            $car[] = [
+//                'condutor' => $faker->name(\App\Categoria::),
+//                'created_at' => date('Y-m-d H:i:s')
+//            ];
+//
+//        }
+//        $veiculo->insert($car)->save();
+
     }
+
 }
+
+//pra rodar: seed:run
