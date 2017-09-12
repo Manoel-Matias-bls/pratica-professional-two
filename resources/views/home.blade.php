@@ -21,7 +21,7 @@
 
                         <div class="form-group">
                             <label for="placa" class="control-label">Placa</label>
-                            <input name="placa" class="form-control" placeholder="Placa..." type="text" required>
+                            <input id="placa" name="placa" class="form-control" placeholder="Placa..." type="text" required>
                         </div>
 
                         <div id="divComboStore" class="form-group">
@@ -35,6 +35,7 @@
 
                         <button type="submit" class="btn btn-primary">Salvar</button>
                         {{ Form::close() }}
+
                     </div>
 
                 </div>
