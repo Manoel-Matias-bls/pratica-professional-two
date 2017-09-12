@@ -50,7 +50,7 @@
                         <div class="form-group">
                             <label for="total" class="control-label">Valor Total a pagar</label>
                             <span class="glyphicon glyphicon-refresh"></span>
-                            <input name="total" class="form-control" placeholder="Valor Total..." type="text" required>
+                            <input name="total" class="form-control campodinheiro" placeholder="Valor Total..." type="text" required>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Salvar</button>
