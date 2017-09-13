@@ -22,7 +22,7 @@
 
                         <div class="form-group">
                             <label for="placa" class="control-label">Placa</label>
-                            <input name="placa" class="form-control" placeholder="Placa..." type="text"
+                            <input name="placa" class="form-control campoplaca" placeholder="Placa..." type="text"
                                    value="{{ $entradas->veiculo->placa }}" required>
                         </div>
 

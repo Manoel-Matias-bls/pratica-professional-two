@@ -9,8 +9,6 @@
 
                         {{Form::open(['url' => route('store')])}}
 
-
-
                         <div class="form-group">
                             <label for="horarioEnt" class="control-label">Entrada</label>
                             {{ Form::datetime('datetime', \Carbon\Carbon::now('America/Sao_Paulo')->format('Y-m-d H:i:s'), ['class'=>'form-control', 'autofocus']) }}
@@ -37,8 +35,6 @@
 
                         <button type="submit" class="btn btn-primary">Salvar</button>
                         {{ Form::close() }}
-
-
 
                     </div>
 

@@ -85,36 +85,43 @@ use Illuminate\Http\Request;
 
         public function saida($id)
         {
-            $ent = Entrada::findOrFail($id);
+            $ent = Entrada::find($id);
             $cat = Categoria::get();
 
-//            $valHora = ($ent->veiculo->categoria->valor / 60);
-//            $valDiaria = 180;
-//
-//            $totDiaria = 0;
-//            $totHora = 0;
-//            $totMinuto = 0;
-//
-//            $dtFinal = \DateTime('2017-09-11 15:41:31');
-//            $dtInicio = \DateTime('2017-09-11 15:02:05');
-//
-//            $diff = $dtInicio->diff($dtFinal);
-//
-//            if ($diff->d != 0) {
-//                $totDiaria = $valDiaria * $diff->d;
-//            }
-//
-//            if ($diff->h != 0) {
-//                $totHora = $valHora*($diff->h*60);
-//            }
-//
-//            if ($diff->i != 0) {
-//                $totMinuto = $diff->i * $valHora;
-//            }
-//
-//            $total = $totDiaria + $totHora + $totMinuto;
+            $valHora = ($ent->veiculo->categoria->valor / 60);
+            $valDiaria = 180;
 
-            return view('saida', ['entradas' => $ent, 'categoria' => $cat]);
+            $totDiaria = 0;
+            $totHora = 0;
+            $totMinuto = 0;
+
+            $dtFinal = \Carbon\Carbon::now();
+            $dtInicio = $ent->entrada;
+
+            $diff = $dtInicio->diff($dtFinal);
+
+            if ($diff->d != 0) {
+                $totDiaria = $valDiaria * $diff->d;
+            }
+
+            if ($diff->h != 0) {
+                $totHora = $valHora*(($diff->h-3)*60);
+            }
+
+            if ($diff->i != 0) {
+                $totMinuto = $diff->i * $valHora;
+            }
+            if ($totDiaria==0 && $totHora==0 && $diff->i <=15)
+            {
+                $total = 0;
+            }
+            else
+            {
+                $total = $totDiaria + $totHora + $totMinuto;
+            }
+
+
+            return view('saida', ['entradas' => $ent, 'categoria' => $cat, 'total' => $total]);
         }
 
 

@@ -27,7 +27,7 @@
 
                         <div class="form-group">
                             <label for="placa" class="control-label">Placa</label>
-                            <input name="placa" class="form-control" placeholder="Placa..." type="text"
+                            <input name="placa" class="form-control campoplaca" placeholder="Placa..." type="text"
                                    value="{{ $entradas->veiculo->placa }}" required>
                         </div>
 
@@ -50,7 +50,7 @@
                         <div class="form-group">
                             <label for="total" class="control-label">Valor Total a pagar</label>
                             <span class="glyphicon glyphicon-refresh"></span>
-                            <input name="total" class="form-control campodinheiro" placeholder="Valor Total..." type="text" required>
+                            <input name="total" class="form-control campodinheiro" placeholder="Valor Total..." type="text" value="{{$total}}" required>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Salvar</button>
