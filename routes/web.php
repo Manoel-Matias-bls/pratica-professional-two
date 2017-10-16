@@ -21,6 +21,8 @@ Route::group(['middleware' => 'web'], function(){
 
     Route::get('home', ['as' => 'home', 'uses' => 'HomeController@index']);
 
+    Route::get('homePage', ['as' => 'page', 'uses' => 'HomeController@home']);
+
     Route::get('listagem', ['as' => 'read', 'uses' => 'HomeController@show']);
 
     Route::post('entrada/store', ['as' => 'store', 'uses' => 'HomeController@store']);
@@ -34,6 +36,9 @@ Route::group(['middleware' => 'web'], function(){
     Route::patch('saida/{ent}', ['as' => 'fechamento', 'uses' => 'HomeController@fechamento']);
 
     Route::delete('entrada/{entrada}', ['as' => 'delete', 'uses' => 'HomeController@delete']);
+
+    Route::get('relatorios', ['as' => 'report', 'uses' => 'HomeController@report']);
+
 
 });
 

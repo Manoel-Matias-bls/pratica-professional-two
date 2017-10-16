@@ -38,12 +38,13 @@
 
                     <div class="container-fluid">
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="/">Controle de Estacionamento</a>
+                            <a class="navbar-brand" href="{{route('page')}}">Controle de Estacionamento</a>
                         </div>
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="{{route('home')}}">Home</a></li>
                             <li><a href="{{route('home')}}">Entradas</a></li>
                             <li><a href="{{route('read')}}">Status Estacionamento</a></li>
+                            <li><a href="{{route('report')}}">Relatórios</a></li>
                         </ul>
                     </div>
 
@@ -91,6 +92,6 @@
     </div>
 
     <!-- Scripts -->
-    {{--<script src="{{ asset('js/app.js') }}"></script>--}}
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

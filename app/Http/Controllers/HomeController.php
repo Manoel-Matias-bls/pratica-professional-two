@@ -25,6 +25,12 @@ use Illuminate\Http\Request;
          *
          * @return \Illuminate\Http\Response
          */
+
+        public function home()
+        {
+            return redirect('homePage');
+        }
+
         public function index()
         {
             $val = Categoria::get();
@@ -160,6 +166,13 @@ use Illuminate\Http\Request;
             $ent->delete();
 
             return redirect('listagem');
+        }
+
+        public function report(Entrada $entrada)
+        {
+            $ent = $entrada->get();
+
+            return view('report', ['entradas' => $ent]);
         }
 
     }
