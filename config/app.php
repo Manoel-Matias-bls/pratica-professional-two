@@ -181,7 +181,10 @@ return [
         Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        Krlove\EloquentModelGenerator\Provider\GeneratorServiceProvider::class
+        Krlove\EloquentModelGenerator\Provider\GeneratorServiceProvider::class,
+        Barryvdh\Snappy\ServiceProvider::class,
+
+
     ],
 
     /*
@@ -231,7 +234,11 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class
+        'Html' => Collective\Html\HtmlFacade::class,
+        'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
+        'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
+
+
 
     ],
 

@@ -101,7 +101,8 @@ use Illuminate\Http\Request;
             $totHora = 0;
             $totMinuto = 0;
 
-            $dtFinal = \Carbon\Carbon::now();
+            $dtFinal = \Carbon\Carbon::now('America/Fortaleza');
+
             $dtInicio = $ent->entrada;
 
             $diff = $dtInicio->diff($dtFinal);
@@ -124,6 +125,8 @@ use Illuminate\Http\Request;
             else
             {
                 $total = $totDiaria + $totHora + $totMinuto;
+
+                $total = round($total,2);
             }
 
 

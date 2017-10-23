@@ -13,9 +13,9 @@
                             <div class="table-responsive col-md-12">
                                 <h2 class="text-center">Comprovante de pagamento</h2>
                                 <hr>
-                                <table class="table table-striped" cellspacing="0" cellpadding="0">
-                                    <img src="../image/parking.png">
-                                </table>
+                                {{--<table class="table table-striped" cellspacing="0" cellpadding="0">--}}
+                                    {{--<img src="../image/parking.png">--}}
+                                {{--</table>--}}
 
                             </div>
                         </div>

@@ -15,6 +15,17 @@
                             <div class="table-responsive col-md-12">
                                 <h2 class="text-center">Relatório geral</h2>
                                 <hr>
+                                <div class="form-group">
+                                    <label class="control-label" style="padding-left:10%">TODOS OS DADOS:</label>&nbsp;
+                                    <input type="checkbox" id="checkAll">
+
+                                    <label class="control-label" style="padding-left:5%">SOMENTE FINALIZADOS:</label>&nbsp;
+                                    <input type="checkbox" id="checkFin">
+
+                                    <label class="control-label" style="padding-left:5%">EM ABERTO:</label>&nbsp;
+                                    <input type="checkbox" id="checkOpen">
+
+                                </div>
                                 <table class="table table-striped" cellspacing="0" cellpadding="0">
                                     <thead>
                                     <tr>
@@ -41,7 +52,7 @@
                                                     <td class="btn-danger">VEÍCULO AINDA NO ESTACIONAMENTO</td>
                                                 @else
                                                 <td>{{ $entrada->saida }}</td>
-                                                <td>R$ {{ $entrada->total }}</td>
+                                                <td>R$ {{  number_format($entrada->total, 2, ',', '.') }}</td>
                                                @endif
                                             </tr>
                                     @endforeach
@@ -51,6 +62,9 @@
                             </div>
                         </div> <!-- fim /#list -->
 
+                        <form action="">
+                        <button type="submit" class="btn btn-primary" onclick="window.print();">IMPRIMIR RELATÓRIO</button>
+                        </form>
                     </div>
 
                 </div>
