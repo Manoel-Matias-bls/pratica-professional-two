@@ -38,6 +38,7 @@ Route::group(['middleware' => 'web'], function(){
     Route::delete('entrada/{entrada}', ['as' => 'delete', 'uses' => 'HomeController@delete']);
 
     Route::get('relatorios', ['as' => 'report', 'uses' => 'HomeController@report']);
+    Route::get('relatorios/{par}', ['as' => 'reports', 'uses' => 'HomeController@reports']);
 
 
 });

@@ -178,4 +178,18 @@ use Illuminate\Http\Request;
             return view('report', ['entradas' => $ent]);
         }
 
+        public function reports(Entrada $entrada, $par)
+        {
+            if ($par == 'all')
+                $ent = $entrada->get();
+
+            if ($par == 'fin')
+                $ent = $entrada->get()->where('saida', $entrada->saida == null)->where('total', $entrada->total == null);
+
+            if ($par == 'open')
+                $ent = $entrada->get()->where('saida', $entrada->saida != null)->where('total', $entrada->total != null);
+
+            return view('report', ['entradas' => $ent]);
+        }
+
     }

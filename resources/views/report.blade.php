@@ -15,17 +15,19 @@
                             <div class="table-responsive col-md-12">
                                 <h2 class="text-center">Relatório geral</h2>
                                 <hr>
-                                <div class="form-group">
-                                    <label class="control-label" style="padding-left:10%">TODOS OS DADOS:</label>&nbsp;
-                                    <input type="checkbox" id="checkAll">
 
-                                    <label class="control-label" style="padding-left:5%">SOMENTE FINALIZADOS:</label>&nbsp;
-                                    <input type="checkbox" id="checkFin">
+                                <ul class="nav nav-tabs" style="background-color:  #80ccff;">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="{{route('reports', 'all')}}" style="color: #5e5e5e">TODOS OS DADOS</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="{{route('reports', 'fin')}}" style="color: #5e5e5e">SOMENTE FINALIZADOS</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="{{route('reports', 'open')}}" style="color: #5e5e5e">EM ABERTO</a>
+                                    </li>
+                                </ul>
 
-                                    <label class="control-label" style="padding-left:5%">EM ABERTO:</label>&nbsp;
-                                    <input type="checkbox" id="checkOpen">
-
-                                </div>
                                 <table class="table table-striped" cellspacing="0" cellpadding="0">
                                     <thead>
                                     <tr>
@@ -40,6 +42,7 @@
                                     </thead>
 
                                     <tbody>
+
                                     @foreach($entradas as $entrada)
                                             <tr>
                                                 <td>{{ $entrada->id }}</td>
