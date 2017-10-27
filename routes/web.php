@@ -12,16 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('homePage');
 });
 
 Route::group(['middleware' => 'web'], function(){
 
     Auth::routes();
 
-    Route::get('home', ['as' => 'home', 'uses' => 'HomeController@index']);
+    Route::get('homePage', ['as' => 'pageOne', 'uses' => 'HomeController@inicio']);
 
-    Route::get('homePage', ['as' => 'page', 'uses' => 'HomeController@home']);
+    Route::get('home', ['as' => 'home', 'uses' => 'HomeController@index']);
 
     Route::get('listagem', ['as' => 'read', 'uses' => 'HomeController@show']);
 
@@ -38,7 +38,13 @@ Route::group(['middleware' => 'web'], function(){
     Route::delete('entrada/{entrada}', ['as' => 'delete', 'uses' => 'HomeController@delete']);
 
     Route::get('relatorios', ['as' => 'report', 'uses' => 'HomeController@report']);
+
     Route::get('relatorios/{par}', ['as' => 'reports', 'uses' => 'HomeController@reports']);
+
+    //CRUD categorias
+
+    Route::get('configuracoes', ['as' => 'config', 'uses' => 'HomeController@config']);
+    Route::get('configuracoes/categorias', ['as' => 'configEdit', 'uses' => 'HomeController@configEdit']);
 
 
 });

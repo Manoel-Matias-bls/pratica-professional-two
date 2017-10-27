@@ -20,6 +20,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 <body>
 
@@ -37,14 +38,13 @@
                     </button>
 
                     <div class="container-fluid">
-                        <div class="navbar-header">
-                            <a class="navbar-brand" href="{{route('page')}}">Controle de Estacionamento</a>
-                        </div>
+                            <a class="navbar-brand" href="{{route('pageOne')}}">Controle de Estacionamento</a>
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="{{route('home')}}">Home</a></li>
+                            <li class="active"><a href="{{route('pageOne')}}">Home</a></li>
                             <li><a href="{{route('home')}}">Entradas</a></li>
                             <li><a href="{{route('read')}}">Status Estacionamento</a></li>
                             <li><a href="{{route('report')}}">Relatórios</a></li>
+                            <li><a href="{{route('config')}}">Configurações</a></li>
                         </ul>
                     </div>
 

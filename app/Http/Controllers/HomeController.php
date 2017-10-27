@@ -26,9 +26,9 @@ use Illuminate\Http\Request;
          * @return \Illuminate\Http\Response
          */
 
-        public function home()
+        public function inicio()
         {
-            return redirect('homePage');
+            return view('inicio');
         }
 
         public function index()
@@ -190,6 +190,13 @@ use Illuminate\Http\Request;
                 $ent = $entrada->get()->where('saida', $entrada->saida != null)->where('total', $entrada->total != null);
 
             return view('report', ['entradas' => $ent]);
+        }
+
+        public function config()
+        {
+            $categoria = Categoria::get();
+
+            return view('config', ['categoria' => $categoria]);
         }
 
     }

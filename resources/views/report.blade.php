@@ -15,7 +15,6 @@
                             <div class="table-responsive col-md-12">
                                 <h2 class="text-center">Relatório geral</h2>
                                 <hr>
-
                                 <ul class="nav nav-tabs" style="background-color:  #80ccff;">
                                     <li class="nav-item">
                                         <a class="nav-link active" href="{{route('reports', 'all')}}" style="color: #5e5e5e">TODOS OS DADOS</a>
@@ -27,6 +26,8 @@
                                         <a class="nav-link active" href="{{route('reports', 'open')}}" style="color: #5e5e5e">EM ABERTO</a>
                                     </li>
                                 </ul>
+
+
 
                                 <table class="table table-striped" cellspacing="0" cellpadding="0">
                                     <thead>
@@ -68,6 +69,8 @@
                         <form action="">
                         <button type="submit" class="btn btn-primary" onclick="window.print();">IMPRIMIR RELATÓRIO</button>
                         </form>
+                        <hr>
+                        <a href="#top" class="glyphicon glyphicon-chevron-up" style="color: #0099ff; align-content: center"><i>Topo</i></a>
                     </div>
 
                 </div>
