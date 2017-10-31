@@ -194,9 +194,10 @@ use Illuminate\Http\Request;
 
         public function config()
         {
-            $categoria = Categoria::get();
+            $categoria = Categoria::all();
 
             return view('config', ['categoria' => $categoria]);
         }
+
 
     }

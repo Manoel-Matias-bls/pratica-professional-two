@@ -7,18 +7,28 @@
                 <div class="panel panel-default">
 
                     <div class="panel-heading"><h2>Configurações</h2></div>
-                    <form action="{{route('configEdit')}}">
+                    <form action="">
                         <div class="panel-body">
+
                             <h4>Alterações em categorias</h4>
                             <div class="form-group">
+
                                 <label for="sel1">Nome categoria:</label>
-                                <select id="comboCategorias" class="form-control" name="categoria">
+
+                                <select id="comboCategoria" class="form-control" name="categoria" onchange="set(this.value)">
                                     @foreach($categoria as $cat)
-                                        <option value="{{$cat->id}}">{{$cat->nome}}</option>
+                                        <option id="{{$cat->id}}" value="{{$cat->valor}}">{{$cat->nome}}</option>
                                     @endforeach
                                 </select>
+
                                 <label>Valor:</label>
-                                <input type="text" class="form-control">
+                                <input id="idVal" type="text" class="form-control">
+
+                                <script>
+                                    function set(val) {
+                                        document.getElementById("idVal").value = val;
+                                    }
+                                </script>
 
                             </div>
                             <button type="submit" class="btn btn-primary">Salvar Alterações</button>

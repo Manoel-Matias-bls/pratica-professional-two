@@ -44,8 +44,6 @@ Route::group(['middleware' => 'web'], function(){
     //CRUD categorias
 
     Route::get('configuracoes', ['as' => 'config', 'uses' => 'HomeController@config']);
-    Route::get('configuracoes/categorias', ['as' => 'configEdit', 'uses' => 'HomeController@configEdit']);
-
 
 });
 
