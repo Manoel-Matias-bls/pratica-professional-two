@@ -8,7 +8,6 @@ window._ = require('lodash');
  */
 
 window.$ = window.jQuery = require('jquery');
-window.$ = window.jQuery = require('inputmask');
 
 
 require('bootstrap-sass');

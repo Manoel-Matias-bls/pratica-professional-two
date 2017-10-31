@@ -22,7 +22,7 @@
                                 </select>
 
                                 <label>Valor:</label>
-                                <input id="idVal" type="text" class="form-control">
+                                <input id="idVal" type="text" class="form-control campodinheiro">
 
                                 <script>
                                     function set(val) {

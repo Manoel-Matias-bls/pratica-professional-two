@@ -39,6 +39,7 @@
                         <th>CONDUTOR</th>
                         <th>PLACA</th>
                         <th>CATEGORIA</th>
+                      {{--  <th>VALOR</th>--}}
                         <th class="actions">AÇÕES</th>
                     </tr>
                     </thead>
@@ -53,6 +54,7 @@
                             <td>{{ $entrada->veiculo->condutor }}</td>
                             <td>{{ $entrada->veiculo->placa }}</td>
                             <td>{{ $entrada->veiculo->categoria->nome}}</td>
+                          {{--  <td>{{ $entrada->total }}</td> --}}
 
                             <td class="actions">
 
@@ -64,7 +66,7 @@
                                 {{ Form::close() }}
                             </td>
                         </tr>
-                        @else
+                        @else 
                         @endif
                     @endforeach
                     </tbody>

@@ -1,9 +1,10 @@
-// Elixir's gulpfile.js
-const elixir = require('laravel-elixir');
+// var elixir = require('laravel-elixir');
 
-require('laravel-elixir-vue-2');
+// elixir(function (mix) {
 
-elixir((mix) => {
-    mix.sass('app.js')
-        .webpack('app.js');
-});
+//     mix.scripts([
+//         'resources/assets/js/jquery.inputmask.bundle.min.js',
+//         'resources/assets/js/mascaras.js',
+//     ], 'public/js/app.js');
+
+// });

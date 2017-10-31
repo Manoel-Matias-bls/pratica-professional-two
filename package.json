@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "inputmask": "^3.3.8",
+    "laravel-elixir": "^6.0.0-16",
     "vue-the-mask": "^0.11.0-alpha.2"
   }
 }

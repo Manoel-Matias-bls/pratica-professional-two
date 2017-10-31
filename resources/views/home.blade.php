@@ -28,7 +28,7 @@
                             <label for="sel">Selecione a categoria:</label>
                             <select id="comboCategorias" class="form-control" name="categoria">
                                 @foreach($categoria as $cat)
-                                    <option value="{{$cat->id}}">{{$cat->nome}}</option>
+                                    <option value="{{$cat->id}}">{{$cat->nome}} : R${{$cat->valor}},00 a hora</option>
                                 @endforeach
                             </select>
                         </div>

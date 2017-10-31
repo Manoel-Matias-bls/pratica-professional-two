@@ -25,7 +25,7 @@
                                         <dt>VALOR PAGO: R$ {{ $entradas->total }}</dt>
                                     </dl>
 
-                                    <th class="btn btn-success btn-xs">FINALIZADO</th>
+                                    <button class="btn btn-success btn-xs" href="{{route('home')}}">FINALIZADO</button>
 
                                 </table>
 
