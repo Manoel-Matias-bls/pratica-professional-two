@@ -21,9 +21,11 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
-                <a href="{{route('home')}}" class="btn btn-primary pull-right h2">Nova entrada</a>
+            <div class="col-md-6">
+                <a href="{{route('home')}}" class="btn btn-primary pull-left h2">Nova entrada</a>
             </div>
+
+
         </div> <!-- fim /#top -->
 
         <hr/> <!-- deixa um espaço livre -->

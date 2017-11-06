@@ -199,5 +199,10 @@ use Illuminate\Http\Request;
             return view('config', ['categoria' => $categoria]);
         }
 
+        public function configEdit(Request $request, Categoria $cat)
+        {
+            $categoria = $request->input('categoria');
+            dd($categoria);
+        }
 
     }
