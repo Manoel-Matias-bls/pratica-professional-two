@@ -16,7 +16,7 @@
 
                         <div id="horarioSaida" class="form-group">
                             <label for="horarioEnt" class="control-label">Saída</label>
-                            {{ Form::datetime('datetimeSaida', \Carbon\Carbon::now('America/Sao_Paulo')->format('Y-m-d H:i:s'), ['class'=>'form-control', 'autofocus']) }}
+                            {{ Form::datetime('datetimeSaida', \Carbon\Carbon::now('America/Fortaleza')->format('Y-m-d H:i:s'), ['class'=>'form-control', 'autofocus']) }}
                         </div>
 
                         <div class="form-group">
