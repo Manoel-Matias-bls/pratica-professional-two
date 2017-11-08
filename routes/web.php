@@ -35,16 +35,23 @@ Route::group(['middleware' => 'web'], function(){
 
     Route::patch('saida/{ent}', ['as' => 'fechamento', 'uses' => 'HomeController@fechamento']);
 
-    Route::delete('entrada/{entrada}', ['as' => 'delete', 'uses' => 'HomeController@delete']);
+    Route::delete('entrada/{entrada}', ['as' => 'delete', 'middleware' => 'auth.role:admin', 'uses' => 'HomeController@delete']);
 
-    Route::get('relatorios', ['as' => 'report', 'uses' => 'HomeController@report']);
+    Route::get('relatorios', ['as' => 'report', 'middleware' => 'auth.role:admin', 'uses' => 'HomeController@report']);
 
-    Route::get('relatorios/{par}', ['as' => 'reports', 'uses' => 'HomeController@reports']);
+    Route::get('relatorios/{par}', ['as' => 'reports', 'middleware' => 'auth.role:admin', 'uses' => 'HomeController@reports']);
 
     //CRUD categorias
 
-    Route::get('configuracoes', ['as' => 'config', 'uses' => 'HomeController@config']);
-    Route::patch('configuracoes/categorias', ['as' => 'configEdit', 'uses' => 'HomeController@configEdit']);
+    Route::get('configuracoes', ['as' => 'config', 'middleware' => 'auth.role:admin', 'uses' => 'HomeController@config']);
+    Route::patch('configuracoes/categorias', ['as' => 'configEdit', 'middleware' => 'auth.role:admin', 'uses' => 'HomeController@configEdit']);
+
+
+    Route::get('/gta', function (){
+
+        return 'Você não é administrador';
+
+    })->name('gta');
 
 });
 
