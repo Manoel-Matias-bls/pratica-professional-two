@@ -65,6 +65,9 @@
 
                             </div>
                         </div> <!-- fim /#list -->
+                        @if(Request::is('*/fin'))
+                                <h3 id="tot" style="text-align: right">Total &nbsp;&nbsp; R$ </h3>
+                        @endif
 
                         <form action="">
                         <button type="submit" class="btn btn-primary" onclick="window.print();">IMPRIMIR RELATÓRIO</button>

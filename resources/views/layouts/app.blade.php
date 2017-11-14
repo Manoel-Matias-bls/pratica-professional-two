@@ -30,21 +30,29 @@
 
                 <div class="navbar-header">
                     <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
                         <span class="sr-only">Toggle Navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
 
-                    <div class="container-fluid">
-                            <a class="navbar-brand" href="{{route('pageOne')}}">Controle de Estacionamento</a>
+                    <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="{{route('pageOne')}}">Home</a></li>
+                            <li><a href="{{route('pageOne')}}">Home</a></li>
                             <li><a href="{{route('home')}}">Entradas</a></li>
                             <li><a href="{{route('read')}}">Status Estacionamento</a></li>
                             <li><a href="{{route('report')}}">Relatórios</a></li>
-                            <li><a href="{{route('config')}}">Configurações</a></li>
+                            <li><a href="{{route('config')}}">Configurações Categorias</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Configurações de Usuários
+                                    <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{route('registros')}}">Listar Usuários</a></li>
+                                    <li><a href="{{route('usuarios')}}">Cadastrar novo Usuário</a></li>
+                                </ul>
+                            </li>
+
                         </ul>
                     </div>
 
@@ -62,8 +70,7 @@
 
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
-                        @elseif(Auth::user()->role == "admin")
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            {{--<li><a href="{{ route('register') }}">Register</a></li>--}}
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
