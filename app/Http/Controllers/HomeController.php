@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Categoria;
 use App\Entrada;
 use App\Veiculo;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 
@@ -97,15 +98,15 @@ use Illuminate\Http\Request;
             $valHora = ($ent->veiculo->categoria->valor / 60);
             $valDiaria = 180;
 
-            $totDiaria = 0;
-            $totHora = 0;
-            $totMinuto = 0;
-
-            $dtFinal = \Carbon\Carbon::now('America/Fortaleza');
+            $dtFinal = Carbon::now("America/Fortaleza");
 
             $dtInicio = $ent->entrada;
 
             $diff = $dtInicio->diff($dtFinal);
+
+            $totDiaria = 0;
+            $totHora = 0;
+            $totMinuto = 0;
 
             if ($diff->d != 0) {
                 $totDiaria = $valDiaria * $diff->d;
@@ -183,8 +184,12 @@ use Illuminate\Http\Request;
             if ($par == 'all')
                 $ent = $entrada->get();
 
-            if ($par == 'fin')
+            if ($par == 'fin') {
                 $ent = $entrada->get()->where('saida', $entrada->saida == null)->where('total', $entrada->total == null);
+                $totalEnt = $ent->sum('total');
+
+                return view('report', ['entradas' => $ent, 'totais' => $totalEnt]);
+            }
 
             if ($par == 'open')
                 $ent = $entrada->get()->where('saida', $entrada->saida != null)->where('total', $entrada->total != null);
@@ -201,8 +206,9 @@ use Illuminate\Http\Request;
 
         public function configEdit(Request $request, Categoria $cat)
         {
-            $categoria = $request->input('categoria');
-            dd($categoria);
+            $id = $request->input('id');
+            $valor = $request->input('valor');
+            return $cat->where('id', $id)->update(['valor' => $valor]);
         }
 
     }

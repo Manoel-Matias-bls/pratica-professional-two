@@ -75,7 +75,7 @@ Route::group(['middleware' => 'web'], function(){
     Route::get('usuarios/{user}/edit', ['as' => 'editUser', 'middleware' => 'auth.role:admin', 'uses' => 'UsuariosController@edit']);
 
     //Salvando Edição Usuário
-    Route::patch('usuarios/{user}', ['as' => 'updateUser', 'middleware' => 'auth.role:admin', 'uses' => 'Auth\RegisterController@registerEdit']);
+    Route::patch('usuarios/{user}', ['as' => 'updateUser', 'middleware' => 'auth.role:admin', 'uses' => 'UsuariosController@registerUpdate']);
 
 
     //Deletar USUÁRIOS
@@ -85,7 +85,7 @@ Route::group(['middleware' => 'web'], function(){
     //Teste para não ADMINISTRADORES
     Route::get('/gta', function (){
 
-        return 'Você não é administrador!<br>Volte para página anterior';
+        return view('accessdenied');//'Você não é administrador!<br>Volte para página anterior';
 
     })->name('gta');
 

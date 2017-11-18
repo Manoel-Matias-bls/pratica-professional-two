@@ -32,7 +32,7 @@
                                 <table class="table table-striped" cellspacing="0" cellpadding="0">
                                     <thead>
                                     <tr>
-                                        <th>Código</th>
+                                        <th>CÓDIGO</th>
                                         <th>CONDUTOR</th>
                                         <th>PLACA</th>
                                         <th>CATEGORIA</th>
@@ -43,7 +43,6 @@
                                     </thead>
 
                                     <tbody>
-
                                     @foreach($entradas as $entrada)
                                             <tr>
                                                 <td>{{ $entrada->id }}</td>
@@ -56,7 +55,7 @@
                                                     <td class="btn-danger">VEÍCULO AINDA NO ESTACIONAMENTO</td>
                                                 @else
                                                 <td>{{ $entrada->saida }}</td>
-                                                <td>R$ {{  number_format($entrada->total, 2, ',', '.') }}</td>
+                                                <td>R$ {{ number_format($entrada->total, 2, ',', '.') }}</td>
                                                @endif
                                             </tr>
                                     @endforeach
@@ -66,7 +65,7 @@
                             </div>
                         </div> <!-- fim /#list -->
                         @if(Request::is('*/fin'))
-                                <h3 id="tot" style="text-align: right">Total &nbsp;&nbsp; R$ </h3>
+                                <h3 id="tot" style="text-align: right">Total &nbsp;&nbsp; R$ {{number_format($totais, 2, ',', '.')}}</h3>
                         @endif
 
                         <form action="">

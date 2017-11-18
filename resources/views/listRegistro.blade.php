@@ -18,6 +18,10 @@
 
         <div id="list" class="row"> <!-- inicio /#list -->
 
+            @if(Session::has('msg_sucesso'))
+                <div class="alert alert-success">{{Session::get('msg_sucesso')}}</div>
+            @endif
+
             <div class="table-responsive col-md-12">
                 <table class="table table-striped" cellspacing="0" cellpadding="0">
                     <thead>
