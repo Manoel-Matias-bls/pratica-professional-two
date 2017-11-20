@@ -6,26 +6,11 @@
         <!-- inicio /#top -->
         <div id="top" class="row">
 
-            <div class="col-md-2">
+            <div class="col-md-2 text-left">
                 <h2>Itens</h2>
+                <a href="{{route('home')}}" class="btn btn-primary h2">Nova entrada</a>
             </div>
-
-            <div class="col-md-6">
-                <div class="input-group h2">
-                    <input name="conPlaca" class="form-control" id="search" type="text" placeholder="Pesquisar placa">
-                    <span class="input-group-btn">
-                <button class="btn btn-primary" type="submit">
-                    <span class="glyphicon glyphicon-search" id="btn-lupa"></span>
-                </button>
-                    </span>
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <a href="{{route('home')}}" class="btn btn-primary pull-left h2">Nova entrada</a>
-            </div>
-
-
+            <hr>
         </div> <!-- fim /#top -->
 
         <hr/> <!-- deixa um espaço livre -->
