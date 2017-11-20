@@ -182,7 +182,6 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Krlove\EloquentModelGenerator\Provider\GeneratorServiceProvider::class,
-        Barryvdh\Snappy\ServiceProvider::class,
 
 
     ],

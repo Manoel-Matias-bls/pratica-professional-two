@@ -6,13 +6,13 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
-        "barryvdh/laravel-ide-helper": "^2.4",
         "barryvdh/laravel-snappy": "^0.4.0",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "5.4.*"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.4",
         "fzaninotto/faker": "^1.7",
         "krlove/eloquent-model-generator": "^1.2",
         "mockery/mockery": "0.9.*",
